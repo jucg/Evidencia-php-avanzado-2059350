@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Artista extends Model
 {
     protected $table = "artists";
-    protected $primaryKey = "ArtisId";
+    protected $primaryKey = "ArtistId";
     public $timestamps = false;
+
+    public function albumes (){
+        return $this->hasMany ('App\Album' , 'ArtistId');
+       }
 }
